@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>Haiku</title>
+    <style>
+      html {
+        overflow: hidden;
+        font-size: 16px;
+      }
+
+      @media screen and (max-width: 600px) {
+        html {
+          font-size: 2.5vw;
+        }
+      }
+
+      body {
+        margin: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: #e5e5f7;
+        opacity: 1;
+        background-size: 10px 10px;
+        background-image: repeating-linear-gradient(
+          45deg,
+          #dd9fff 0,
+          #e79fff 1px,
+          #e5e5f7 0,
+          #e5e5f7 50%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      div {
+        padding: 0px 16px;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "cell";
+        align-items: flex-end;
+        justify-items: start;
+      }
+
+      img {
+        max-width: 600px;
+        border: 2px solid black;
+        grid-area: cell;
+      }
+
+      @media screen and (max-width: 600px) {
+        img {
+          width: 100%;
+        }
+      }
+
+      @font-face {
+        font-family: KouzanBrushFontSousyo;
+        src: url(/KouzanBrushFontSousyo.ttf);
+      }
+
+      #japanese {
+        margin: 2rem 4rem;
+        font-family: KouzanBrushFontSousyo;
+        font-size: 2.5rem;
+        grid-area: cell;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        align-self: flex-start;
+      }
+
+      #hungarian {
+        margin: 1.4rem;
+        font-family: serif;
+        grid-area: cell;
+        justify-self: end;
+        font-style: italic;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <img src="/background.jpeg" />
+      <p id="japanese">旭光が<br />丸い小鳥の<br />目を覚ます</p>
+      <p id="hungarian">
+        &bdquo;Emelkedő nap sugarai,<br />
+        gömbölyű madárka,<br />
+        ébredezik.&rdquo;<br />
+        Houougen Hikaru<br />
+        - 鳳凰眩光
+      </p>
+    </div>
+  </body>
+</html>
